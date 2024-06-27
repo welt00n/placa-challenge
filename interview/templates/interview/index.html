@@ -1,0 +1,20 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'interview/style.css' %}">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Interview at Plaza</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the Job Interview at Plaza</h1>
+        <form action="{% url 'start_interview' %}" method="post">
+            {% csrf_token %}
+            <button type="submit">Start</button>
+        </form>
+    </div>
+</body>
+</html>

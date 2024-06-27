@@ -1,0 +1,19 @@
+<h1>Plaza Job Interview</h1>
+<ul>
+{% for message in messages %}
+    {% if message.role == "user" %}
+        <li>{{ message.message }}</li>
+    {% endif %}
+    {% if message.role != "user" %}
+        <li><i>{{ message.message }}</i></li>
+    {% endif %}
+    <br/>
+{% endfor %}
+</ul>
+<form action="{% url 'submit_message' %}" method="post">
+    {% csrf_token %}
+    <label for="message"></label>
+    <input id="id_thread_id" type="hidden" name="thread_id" value="{{thread_id}}" />
+    <input autofocus='autofocus' type="text" name="message" required id="id_message">
+    <button {{finished}} type="submit">Send</button>
+</form>
