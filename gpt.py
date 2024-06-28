@@ -6,7 +6,7 @@ import logging
 logger = logging.getLogger("django")
 
 client = OpenAI(
-  api_key="sk-proj-YVUxbVJmDP9ByWZ5WcL5T3BlbkFJDPKq2s6ARl1iGjsS5wCL"
+  api_key=""
 )
 
 def get_new_assistant():
